@@ -1,7 +1,12 @@
-import "./App.css";
+import React from "react";
+import EmployeeTable from "../src/pages/EmployeeTable";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <EmployeeTable />
+    </div>
+  );
 }
 
 export default App;
