@@ -21,13 +21,40 @@ function EmployeeTable() {
       .catch((err) => console.log(err));
   }
 
-  function handleBtnClick() {
-    console.log(employee.employees[0].name);
+  function handleName(event) {
+    event.preventDefault();
+    employee.employees.sort((a, b) => a.name.first.localeCompare(b.name.first));
+    return setEmployee({
+      employees: employee.employees,
+    });
+  }
+
+  function handleUsername(event) {
+    event.preventDefault();
+    employee.employees.sort((a, b) =>
+      a.login.username.localeCompare(b.login.username)
+    );
+    return setEmployee({
+      employees: employee.employees,
+    });
+  }
+
+  function handleEmail(event) {
+    event.preventDefault();
+    employee.employees.sort((a, b) => a.email.localeCompare(b.email));
+    return setEmployee({
+      employees: employee.employees,
+    });
   }
 
   return (
     <div>
-      <Table employees={employee.employees} handleBtnClick={handleBtnClick} />
+      <Table
+        employees={employee.employees}
+        handleName={handleName}
+        handleUsername={handleUsername}
+        handleEmail={handleEmail}
+      />
     </div>
   );
 }

@@ -2,18 +2,24 @@ import React from "react";
 import TableRow from "../TableRow";
 
 function Table(props) {
+  const { handleName, handleUsername, handleEmail } = props;
   return (
     <div>
-      <button onClick={props.handleBtnClick}>button</button>
       <table>
         <thead>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Age</th>
+            <th name="name" onClick={handleName}>
+              Name
+            </th>
+            <th name="username" onClick={handleUsername}>
+              Username
+            </th>
+            <th name="email" onClick={handleEmail}>
+              Email
+            </th>
+            <th name="gender">Gender</th>
+            <th name="age">Age</th>
           </tr>
         </thead>
         <tbody>
