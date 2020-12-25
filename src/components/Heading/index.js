@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function Heading() {
   return (
-    <div>
+    <header>
       <h1>Employee Directory</h1>
-    </div>
+    </header>
   );
 }
 

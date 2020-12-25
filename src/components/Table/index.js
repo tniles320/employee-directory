@@ -1,5 +1,6 @@
 import React from "react";
 import TableRow from "../TableRow";
+import "./style.css";
 
 function Table(props) {
   return (

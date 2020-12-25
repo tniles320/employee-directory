@@ -1,7 +1,24 @@
+div {
+    text-align: center;
+}
+
+.order-btn {
+    margin: 10px;
+}
+
 #reverse-btn {
     display: none;
 }
 
 .show {
     display: block !important;
+    margin: auto;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    color: green;
+}
+
+.show:focus {
+    outline: none;
 }

@@ -24,10 +24,15 @@ function EmployeeTable() {
       .catch((err) => console.log(err));
   }
 
-  function handleName(event) {
-    event.preventDefault();
+  const btnFunction = () => {
     reverseBtn.classList.add("show");
     reverseBtn.innerHTML = "&#x21E7;";
+    reverseBtn.style.color = "green";
+  };
+
+  function handleName(event) {
+    event.preventDefault();
+    btnFunction();
     employee.employees.sort((a, b) => a.name.first.localeCompare(b.name.first));
     return setEmployee({
       employees: employee.employees,
@@ -36,8 +41,7 @@ function EmployeeTable() {
 
   function handleUsername(event) {
     event.preventDefault();
-    reverseBtn.classList.add("show");
-    reverseBtn.innerHTML = "&#x21E7;";
+    btnFunction();
     employee.employees.sort((a, b) =>
       a.login.username.localeCompare(b.login.username)
     );
@@ -48,8 +52,7 @@ function EmployeeTable() {
 
   function handleEmail(event) {
     event.preventDefault();
-    reverseBtn.classList.add("show");
-    reverseBtn.innerHTML = "&#x21E7;";
+    btnFunction();
     employee.employees.sort((a, b) => a.email.localeCompare(b.email));
     return setEmployee({
       employees: employee.employees,
@@ -60,8 +63,10 @@ function EmployeeTable() {
     event.preventDefault();
     if (reverseBtn.innerHTML === "⇧") {
       reverseBtn.innerHTML = "&#x21E9;";
+      reverseBtn.style.color = "red";
     } else {
       reverseBtn.innerHTML = "&#x21E7;";
+      reverseBtn.style.color = "green";
     }
     const reverseEmployee = employee.employees.reverse();
     return setEmployee({

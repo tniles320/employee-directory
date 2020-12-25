@@ -6,14 +6,26 @@ function Buttons(props) {
 
   return (
     <div>
-      <h3>Sort By:</h3>
-      <button className="order-btn" name="name" onClick={handleName}>
+      <h4>Sort By:</h4>
+      <button
+        className="order-btn btn btn-primary"
+        name="name"
+        onClick={handleName}
+      >
         Name
       </button>
-      <button className="order-btn" name="username" onClick={handleUsername}>
+      <button
+        className="order-btn btn btn-primary"
+        name="username"
+        onClick={handleUsername}
+      >
         Username
       </button>
-      <button className="order-btn" name="email" onClick={handleEmail}>
+      <button
+        className="order-btn btn btn-primary"
+        name="email"
+        onClick={handleEmail}
+      >
         Email
       </button>
       <div>
