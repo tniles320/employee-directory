@@ -14,6 +14,7 @@ function EmployeeTable() {
     loadEmployees();
   }, []);
 
+  // api call when the page is loaded, sets employee state
   function loadEmployees() {
     API.fetchEmployees()
       .then((res) => {
@@ -24,12 +25,14 @@ function EmployeeTable() {
       .catch((err) => console.log(err));
   }
 
+  // shows arrow button, adds up arrow, adds green color
   const btnFunction = () => {
     reverseBtn.classList.add("show");
     reverseBtn.innerHTML = "&#x21E7;";
     reverseBtn.style.color = "green";
   };
 
+  // sorts employees alphabetically by name
   function handleName(event) {
     event.preventDefault();
     btnFunction();
@@ -39,6 +42,7 @@ function EmployeeTable() {
     });
   }
 
+  // sorts employees alphabetically by username
   function handleUsername(event) {
     event.preventDefault();
     btnFunction();
@@ -50,6 +54,7 @@ function EmployeeTable() {
     });
   }
 
+  // sorts employees alphabetically by email
   function handleEmail(event) {
     event.preventDefault();
     btnFunction();
@@ -59,6 +64,7 @@ function EmployeeTable() {
     });
   }
 
+  // reverses order of employee list and changes arrow button up/down, green/red
   function handleReverseOrder(event) {
     event.preventDefault();
     if (reverseBtn.innerHTML === "⇧") {
