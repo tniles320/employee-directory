@@ -1,7 +1,11 @@
 import React from "react";
 
 function Heading() {
-  return <div>Employee Directory</div>;
+  return (
+    <div>
+      <h1>Employee Directory</h1>
+    </div>
+  );
 }
 
 export default Heading;
